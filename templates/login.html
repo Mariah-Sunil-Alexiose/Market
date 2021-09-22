@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+<h1 class="text-center" style="padding: 0.7em 0;">Login form</h1>
+<br/>
+<div class="container">
+    <form method="POST" class="form-signin" style="color:white;">
+        {{ form.hidden_tag() }}
+        {{ form.username.label() }}
+        {{ form.username(class="form-control", placeholder="User Name") }}
+        {{ form.password.label() }}
+        {{ form.password(class="form-control", placeholder="Password") }}
+        <br/>
+        <div class="checkbox mb-3">
+            <h6 class="text-center">Do not have an account? <a class="btn btn-sm btn-secondary" href="{{ url_for('register') }}">Register</a></h6>
+        </div>
+        {{ form.submit(class="btn btn-primary btn-block lg") }}
+    </form>
+</div>
+{% endblock body%}
